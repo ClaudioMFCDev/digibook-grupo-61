@@ -1,7 +1,29 @@
+<?php if (session()->getFlashdata('mensaje')): ?>
+    <div class="alert alert-<?= session()->getFlashdata('tipo') ?> alert-dismissible fade show" role="alert">
+        <?= session()->getFlashdata('mensaje') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
+
 <?php if (count($cart) <= 0) {; ?>
-    <p class="display-1 p-5 bg-danger m-5">
+    <p class="display-1 p-3 bg-danger m-5">
         Aún no ha agregado productos al carrito.
     </p>
+
+    <div class="d-flex justify-content-between mx-2">
+
+        <a 
+            href="<?= base_url('cart/delete') ?>" 
+            class="btn btn-danger" 
+            onclick="return confirm('¿Estás seguro de que deseas eliminar todos los productos del carrito?');"
+        >
+            Vaciar Carrito
+        </a>
+
+        <a href="<?= base_url('/') ?>" class="btn btn-secondary">Seguir Comprando</a>
+        <a href="<?= base_url('buy/registrar') ?>" class="btn btn-success">Finalizar Compra</a>    
+
+    </div>
 <?php } else {; ?>
 
     <table class="table table-striped table-hover text-center mt-3">
@@ -35,7 +57,13 @@
 
     <div class="d-flex justify-content-between mx-2">
 
-        <a href="<?= base_url('cart/delete') ?>" class="btn btn-danger btn-eliminar-carrito">Eliminar Carrito</a>
+        <a 
+            href="<?= base_url('cart/delete') ?>" 
+            class="btn btn-danger" 
+            onclick="return confirm('¿Estás seguro de que deseas eliminar todos los productos del carrito?');"
+        >
+            Vaciar Carrito
+        </a>
         <a href="<?= base_url('/') ?>" class="btn btn-secondary">Seguir Comprando</a>
         <a href="<?= base_url('buy/registrar') ?>" class="btn btn-success">Finalizar Compra</a>    
 

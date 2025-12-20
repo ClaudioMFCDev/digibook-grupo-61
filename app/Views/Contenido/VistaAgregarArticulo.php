@@ -1,9 +1,27 @@
+<!-- Para mostrar los mensajes de Error del formulario-->
+<?php if (session()->has('errors')): ?>
+    <div class="alert alert-danger">
+        <ul>
+        <?php foreach (session('errors') as $error): ?>
+            <li><?= esc($error) ?></li>
+        <?php endforeach ?>
+        </ul>
+    </div>
+<?php endif; ?>
+
+<?php if (session()->has('mensaje_error')): ?>
+    <div class="alert alert-warning">
+        <?= session('mensaje_error') ?>
+    </div>
+<?php endif; ?>
+
+
 
 <!--Muestra una ventana emergente si el libro fue insertado correctamente-->
-<?php if (session()->getFlashdata('correct_insert')): ?>
+<?php if (session()->getFlashdata('mensaje')): ?>
     <script>
         window.onload = function () {
-            alert("<?= session()->getFlashdata('correct_insert') ?>");
+            alert("<?= session()->getFlashdata('mensaje') ?>");
         };
     </script>
 <?php endif; ?>
@@ -17,9 +35,11 @@
     </script>
 <?php endif; ?>
 
+<!-- DIV PRINCIPAL -->
 <div class="container w-75">
   <h1 class="bg-dark text-light text-center mt-5 rounded p-3">Registrar Nuevo Libro</h1>
-  <form action="<?= base_url('create_book') ?>" method="post" enctype="multipart/form-data">    <!-- Nombre -->
+  <form action="<?= base_url('create_book') ?>" method="post" enctype="multipart/form-data">
+      <!-- Titulo -->
     <div class="mb-3">
       <label for="nombre_libro" class="form-label">Título</label>
       <!--old permite mantener el viejo valor que tenía el input cuando se redirige la vista-->
@@ -68,7 +88,7 @@
      <!-- Genero -->
     <div class="mb-3">
       <label for="genero_libro" class="form-label">Genero</label>
-      <select name="genero_libro" name="genero_libro">
+      <select name="genero_libro" class="form-select">
 
         <?php foreach ($generos as $g): ?>
           <option value="<?= $g->idGenero ?>" <?= old('genero_libro') == $g->idGenero ? 'selected' : '' ?>>
@@ -102,7 +122,7 @@
      <!-- Editorial -->
     <div class="mb-3">
       <label for="editorial_libro" class="form-label">Editorial</label>
-      <select name="editorial_libro" name="autor_libro">
+      <select name="editorial_libro" name="editorial_libro">
 
         <?php foreach ($editoriales as $e): ?>
           <option value="<?= $e->idEditorial ?>" <?= old('editorial_libro') == $e->idEditorial ? 'selected' : '' ?>>

@@ -137,27 +137,17 @@ class Carrito extends BaseController{
         
     }
 
-    /**
+/**
      * Método que permite la eliminación total del carrito
      */
     public function vaciarCarrito()
     {
-        try {
-                $this->cart->destroy();
-                return $this->response->setJSON([
-                    'success' => true,
-                
-                        'message' => 'Carrito eliminado.'
-                    ]);
-        } catch (\Throwable $th) {
-              return $this->response->setJSON([
-                    'success' => false,
-                    'message' => 'Error al eliminar el carrito.'
-                ]);
-        }
+        // 1. Destruimos el carrito
+        $this->cart->destroy();
         
-
-       
+        // 2. En lugar de JSON, redirigimos al usuario a la vista del carrito
+        // Así verá la tabla vacía y la página bonita de siempre.
+        return redirect()->to(base_url('cart'));
     }
 
 }

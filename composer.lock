@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "548e6e095ed4cd7f08ee436f744f53b7",
+    "content-hash": "c908cfb3da1c0690c5964ac8cbe1e2cb",
     "packages": [
         {
             "name": "bertugfahriozer/ci4shoppingcart",
@@ -48,6 +48,57 @@
                 "source": "https://github.com/bertugfahriozer/ci4shoppingcart"
             },
             "time": "2022-11-27T01:36:37+00:00"
+        },
+        {
+            "name": "codeigniter4/translations",
+            "version": "v4.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeigniter4/translations.git",
+                "reference": "98a47fc1e9ab7de5f8db0a4ef9fd40a3b85fde5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeigniter4/translations/zipball/98a47fc1e9ab7de5f8db0a4ef9fd40a3b85fde5e",
+                "reference": "98a47fc1e9ab7de5f8db0a4ef9fd40a3b85fde5e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-intl": "*",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "codeigniter/coding-standard": "^1.7",
+                "codeigniter4/codeigniter4": "dev-develop",
+                "ext-tokenizer": "*",
+                "friendsofphp/php-cs-fixer": "^3.53",
+                "nexusphp/cs-config": "^3.22",
+                "phpunit/phpunit": "^10.5 || ^11.0"
+            },
+            "type": "project",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Translations\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Translations for CodeIgniter v4 web framework",
+            "homepage": "https://codeigniter.com",
+            "support": {
+                "forum": "http://forum.codeigniter.com/",
+                "issues": "https://github.com/codeigniter4/translations/issues",
+                "slack": "https://codeigniterchat.slack.com",
+                "source": "https://github.com/codeigniter4/translations"
+            },
+            "time": "2025-08-02T13:51:57+00:00"
         },
         {
             "name": "jason-napolitano/codeigniter4-cart-module",
@@ -4707,7 +4758,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
@@ -4716,6 +4767,6 @@
         "ext-json": "*",
         "ext-mbstring": "*"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.6.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
 }

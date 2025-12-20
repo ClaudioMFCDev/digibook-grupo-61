@@ -19,7 +19,7 @@ class CompraModel extends Model
      * Permite obtener los datos de los autores almacenados en la base de datos
      * @return ObjectArray retorna un arreglo de objetos con los datos de todos los autores almacenados en la base de datos
      */
-    public function realizarCompra($total, $fecha, $dni, $jsonDetalles)
+    public function registrarCompra($total, $fecha, $dni, $jsonDetalles)
     {
         // Ejecutamos el procedimiento
         // Si algo falla dentro de MySQL (ROLLBACK), lanzará una Excepción aquí mismo.

@@ -13,7 +13,7 @@ class ArticuloModel extends Model
      * @return Array retorna un arreglo que contiene el resultado de la operación que será 1 en caso de éxito y 0 en caso de error, y un mensaje de error en caso de existir
      */
     public function insertaArticulo($data): Array
-{
+    {
     $db = \Config\Database::connect();
      // Asignar fecha o null
      $fecha = !empty($data['fecha_publicacion']) 
@@ -96,5 +96,35 @@ public function getArticuloPorId($idArticulo){
     }
 
 }
+
+    /**
+     * Realiza la baja lógica de un artículo cambiando su estado activo a 0 (falso).
+     * @param int $id El ID del artículo a desactivar
+     * @return array Arreglo con el resultado de la operación ('resultado' => 1 o 0)
+     */
+    public function bajaArticulo($id)
+    {
+        try {
+            // Opción A: Si tu clave primaria se configura automática en el modelo
+            // $this->update($id, ['activo' => 0]); 
+
+            // Opción B (Más segura si no recuerdas config de PK): 
+            // Usamos el builder directamente para asegurar el update
+            $builder = $this->db->table($this->table);
+            $builder->where('idLibro', $id);
+            $builder->update(['activo' => 0]);
+
+            // Verificamos si se afectó alguna fila (si el ID existía)
+            if ($this->db->affectedRows() > 0) {
+                return ['resultado' => 1, 'msj' => 'Artículo dado de baja correctamente.'];
+            } else {
+                return ['resultado' => 0, 'msj_error' => 'No se encontró el artículo o ya estaba inactivo.'];
+            }
+
+        } catch (\Exception $e) {
+            // Capturamos cualquier error de BD y lo devolvemos controlado
+            return ['resultado' => 0, 'msj_error' => 'Error en BD: ' . $e->getMessage()];
+        }
+    }
 
 }

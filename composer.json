@@ -15,6 +15,7 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "bertugfahriozer/ci4shoppingcart": "^1.1",
+        "codeigniter4/translations": "^4.6",
         "jason-napolitano/codeigniter4-cart-module": "^1.0",
         "laminas/laminas-escaper": "^2.9",
         "psr/log": "^1.1"
