@@ -1,0 +1,1300 @@
+INFO - 2025-12-05 00:43:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:43:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:44:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-05 00:44:24 --> ErrorException: Undefined variable $respuesta
+in APPPATH\Controllers\Articulo.php on line 121.
+ 1 APPPATH\Controllers\Articulo.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $respuesta', 'C:\\xampp\\htdocs\\digibook\\app\\Controllers\\Articulo.php', 121)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 00:46:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:47:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:47:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:50:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:50:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:50:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:51:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:52:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:52:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:56:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:57:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 00:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 00:57:18 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 00:57:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 01:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 01:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 01:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 01:10:19 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 01:10:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 01:18:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 01:18:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 01:18:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 01:18:27 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 01:18:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 01:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 01:30:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 01:30:09 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\digibook\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('El Caminoi Del ...', 'titulo', Array, NULL, 'nombre_libro')
+#6 C:\xampp\htdocs\digibook\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('nombre_libro', 'nombre_libro', 'El Caminoi Del ...', Array, Array)
+#7 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(93): CodeIgniter\Validation\Validation->run()
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#9 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#10 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\digibook\system\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\digibook\system\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('El Caminoi Del ...', 'titulo', Array, NULL, 'nombre_libro')
+#5 C:\xampp\htdocs\digibook\system\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('nombre_libro', 'nombre_libro', 'El Caminoi Del ...', Array, Array)
+#6 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(93): CodeIgniter\Validation\Validation->run()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#9 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2025-12-05 01:30:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `articulo`
+WHERE `titulo` = :titulo:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Validation\StrictRules\Rules.php(227): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\Validation\Validation.php(328): CodeIgniter\Validation\StrictRules\Rules->is_unique('El Caminoi Del Artista', 'titulo', [...], null, 'nombre_libro')
+ 5 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('nombre_libro', 'nombre_libro', 'El Caminoi Del Artista', [...], [...])
+ 6 APPPATH\Controllers\Articulo.php(93): CodeIgniter\Validation\Validation->run()
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 13:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 13:46:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 13:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 13:49:45 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(90): App\Models\ArticuloModel->insertaArticulo(Array)
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(90): App\Models\ArticuloModel->insertaArticulo(Array)
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 13:49:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 13:49:49 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 13:49:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(35): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:07:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-05 14:07:14 --> ErrorException: Undefined property: App\Controllers\Articulo::$generoModel
+in APPPATH\Controllers\Articulo.php on line 38.
+ 1 APPPATH\Controllers\Articulo.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Articulo::$generoModel', 'C:\\xampp\\htdocs\\digibook\\app\\Controllers\\Articulo.php', 38)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:07:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-05 14:07:16 --> ErrorException: Undefined property: App\Controllers\Articulo::$generoModel
+in APPPATH\Controllers\Articulo.php on line 38.
+ 1 APPPATH\Controllers\Articulo.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Articulo::$generoModel', 'C:\\xampp\\htdocs\\digibook\\app\\Controllers\\Articulo.php', 38)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-05 14:09:25 --> ErrorException: Undefined variable $generoModel
+in APPPATH\Controllers\Articulo.php on line 33.
+ 1 APPPATH\Controllers\Articulo.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $generoModel', 'C:\\xampp\\htdocs\\digibook\\app\\Controllers\\Articulo.php', 33)
+ 2 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:10:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-05 14:10:52 --> Error: Object of class App\Models\GeneroModel could not be converted to string
+in APPPATH\Controllers\Articulo.php on line 38.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:11:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-05 14:11:20 --> Error: Undefined constant "App\Controllers\generoModel"
+in APPPATH\Controllers\Articulo.php on line 38.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:13:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 14:13:04 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 14:13:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:14:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 14:14:36 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 14:14:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:18:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:18:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 14:18:58 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(91): App\Models\ArticuloModel->insertaArticulo(Array)
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(91): App\Models\ArticuloModel->insertaArticulo(Array)
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 14:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 14:19:02 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(33): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(33): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 14:19:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(33): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:20:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 14:22:35 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(91): App\Models\ArticuloModel->insertaArticulo(Array)
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(91): App\Models\ArticuloModel->insertaArticulo(Array)
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 14:22:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 14:22:39 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(33): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(33): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 14:22:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(33): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 14:48:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:48:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:48:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 14:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 14:57:49 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(97): App\Models\ArticuloModel->insertaArticulo(Array)
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(97): App\Models\ArticuloModel->insertaArticulo(Array)
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 14:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 14:57:53 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(39): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(39): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 14:57:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(39): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 15:19:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 15:19:44 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(96): App\Models\ArticuloModel->insertaArticulo(Array)
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(96): App\Models\ArticuloModel->insertaArticulo(Array)
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 15:19:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 15:19:48 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 15:19:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 15:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 15:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 15:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 15:24:33 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(96): App\Models\ArticuloModel->insertaArticulo(Array)
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(96): App\Models\ArticuloModel->insertaArticulo(Array)
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 15:24:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 15:24:37 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 15:24:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 15:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 15:47:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 15:47:34 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=30504 in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 184)
+#1 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#5 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 15:47:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-12-05 15:47:41 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 15:47:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 15:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 15:49:03 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=30504 in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 184)
+#1 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(64): CodeIgniter\Database\BaseConnection->query('CALL obtenerLib...')
+#5 C:\xampp\htdocs\digibook\app\Controllers\Home.php(30): App\Models\ArticuloModel->getArticulos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(64): CodeIgniter\Database\BaseConnection->query('CALL obtenerLib...')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Home.php(30): App\Models\ArticuloModel->getArticulos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Home->index()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(64): CodeIgniter\Database\BaseConnection->query('CALL obtenerLib...')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Home.php(30): App\Models\ArticuloModel->getArticulos()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Home->index()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2025-12-05 15:49:03 --> Error connecting to the database: ErrorException: mysqli::real_connect(): Error while reading greeting packet. PID=30504 in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\xampp\\htdocs...', 184)
+#1 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#5 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+
+Next mysqli_sql_exception: MySQL server has gone away in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: MySQL server has gone away in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 15:49:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: MySQL server has gone away
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-12-05 15:49:03 --> ErrorException: foreach() argument must be of type array|object, int given
+in APPPATH\Views\Contenido\index.php on line 10.
+ 1 APPPATH\Views\Contenido\index.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, int given', 'C:\\xampp\\htdocs\\digibook\\app\\Views\\Contenido\\index.php', 10)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\digibook\\app\\Views\\Contenido\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Contenido/index', [], true)
+ 5 APPPATH\Controllers\Home.php(34): view('Contenido/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 15:49:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 15:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 15:49:52 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(64): CodeIgniter\Database\BaseConnection->query('CALL obtenerLib...')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Home.php(30): App\Models\ArticuloModel->getArticulos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Home->index()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(64): CodeIgniter\Database\BaseConnection->query('CALL obtenerLib...')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Home.php(30): App\Models\ArticuloModel->getArticulos()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Home->index()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 15:49:52 --> ErrorException: foreach() argument must be of type array|object, int given
+in APPPATH\Views\Contenido\index.php on line 10.
+ 1 APPPATH\Views\Contenido\index.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, int given', 'C:\\xampp\\htdocs\\digibook\\app\\Views\\Contenido\\index.php', 10)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\digibook\\app\\Views\\Contenido\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Contenido/index', [], true)
+ 5 APPPATH\Controllers\Home.php(34): view('Contenido/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 18:48:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 18:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 18:49:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 18:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-05 19:01:05 --> ErrorException: Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Debug\Exceptions.php on line 202.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-12-05 19:01:05 --> ErrorException: Maximum execution time of 120 seconds exceeded
+in SYSTEMPATH\Debug\Exceptions.php on line 202.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2025-12-05 19:10:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 19:23:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 19:23:34 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(96): App\Models\ArticuloModel->insertaArticulo(Array)
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(96): App\Models\ArticuloModel->insertaArticulo(Array)
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 19:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 19:23:38 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 19:23:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 19:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 19:31:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 19:31:32 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(96): App\Models\ArticuloModel->insertaArticulo(Array)
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(96): App\Models\ArticuloModel->insertaArticulo(Array)
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 19:31:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 19:31:36 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 19:31:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2.getGeneros()')
+ 3 APPPATH\Controllers\Articulo.php(38): App\Models\GeneroModel->getGeneros()
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 19:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 19:38:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:01:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 20:01:39 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(114): App\Models\ArticuloModel->insertaArticulo(Array)
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(40): CodeIgniter\Database\BaseConnection->query('CALL crearNuevo...', Array)
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(114): App\Models\ArticuloModel->insertaArticulo(Array)
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 20:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 20:01:43 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 20:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 20:07:13 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 20:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:07:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 20:07:22 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(64): CodeIgniter\Database\BaseConnection->query('CALL obtenerLib...')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Home.php(30): App\Models\ArticuloModel->getArticulos()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Home->index()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\ArticuloModel.php(64): CodeIgniter\Database\BaseConnection->query('CALL obtenerLib...')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Home.php(30): App\Models\ArticuloModel->getArticulos()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Home->index()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2025-12-05 20:07:22 --> ErrorException: foreach() argument must be of type array|object, int given
+in APPPATH\Views\Contenido\index.php on line 10.
+ 1 APPPATH\Views\Contenido\index.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, int given', 'C:\\xampp\\htdocs\\digibook\\app\\Views\\Contenido\\index.php', 10)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\digibook\\app\\Views\\Contenido\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Contenido/index', [], true)
+ 5 APPPATH\Controllers\Home.php(34): view('Contenido/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-12-05 20:07:32 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 20:07:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 20:07:37 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 20:07:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:08:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-12-05 20:08:57 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'digibook2', 3306, '', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#4 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\digibook\app\Models\GeneroModel.php(18): CodeIgniter\Database\BaseConnection->query('CALL digibook2....')
+#3 C:\xampp\htdocs\digibook\app\Controllers\Articulo.php(46): App\Models\GeneroModel->getGeneros()
+#4 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Articulo->show_product_form()
+#5 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+INFO - 2025-12-05 20:08:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:11:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:13:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:13:39 --> Cart Class Initialized
+INFO - 2025-12-05 20:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:13:41 --> Cart Class Initialized
+INFO - 2025-12-05 20:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:13:41 --> Cart Class Initialized
+INFO - 2025-12-05 20:13:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:13:45 --> Cart Class Initialized
+INFO - 2025-12-05 20:13:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:13:45 --> Cart Class Initialized
+INFO - 2025-12-05 20:17:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:18:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:18:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:28:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:32:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:32:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:32:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:32:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:34:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-05 20:36:29 --> CodeIgniter\Validation\Exceptions\ValidationException: unique no es una regla de validación válida.
+in SYSTEMPATH\Validation\Validation.php on line 336.
+ 1 SYSTEMPATH\Validation\Validation.php(336): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('unique')
+ 2 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('nombre_libro', 'nombre_libro', 'Departamento 14', [...], [...])
+ 3 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Articulo.php(82): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-12-05 20:36:57 --> TypeError: CodeIgniter\Validation\StrictRules\Rules::is_unique(): Argument #2 ($field) must be of type string, null given, called in C:\xampp\htdocs\digibook\system\Validation\Validation.php on line 327
+in SYSTEMPATH\Validation\StrictRules\Rules.php on line 199.
+ 1 SYSTEMPATH\Validation\Validation.php(327): CodeIgniter\Validation\StrictRules\Rules->is_unique('Departamento 14', null)
+ 2 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('nombre_libro', 'nombre_libro', 'Departamento 14', [...], [...])
+ 3 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Articulo.php(82): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-12-05 20:37:00 --> TypeError: CodeIgniter\Validation\StrictRules\Rules::is_unique(): Argument #2 ($field) must be of type string, null given, called in C:\xampp\htdocs\digibook\system\Validation\Validation.php on line 327
+in SYSTEMPATH\Validation\StrictRules\Rules.php on line 199.
+ 1 SYSTEMPATH\Validation\Validation.php(327): CodeIgniter\Validation\StrictRules\Rules->is_unique('Departamento 14', null)
+ 2 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('nombre_libro', 'nombre_libro', 'Departamento 14', [...], [...])
+ 3 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Articulo.php(82): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 20:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-12-05 20:37:13 --> TypeError: CodeIgniter\Validation\StrictRules\Rules::is_unique(): Argument #2 ($field) must be of type string, null given, called in C:\xampp\htdocs\digibook\system\Validation\Validation.php on line 327
+in SYSTEMPATH\Validation\StrictRules\Rules.php on line 199.
+ 1 SYSTEMPATH\Validation\Validation.php(327): CodeIgniter\Validation\StrictRules\Rules->is_unique('Departamento 14', null)
+ 2 SYSTEMPATH\Validation\Validation.php(200): CodeIgniter\Validation\Validation->processRules('nombre_libro', 'nombre_libro', 'Departamento 14', [...], [...])
+ 3 SYSTEMPATH\Controller.php(152): CodeIgniter\Validation\Validation->run()
+ 4 APPPATH\Controllers\Articulo.php(82): CodeIgniter\Controller->validate([...])
+ 5 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Articulo->validarDatos()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Articulo))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2025-12-05 20:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:39:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:40:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:40:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-12-05 20:50:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
