@@ -14,33 +14,63 @@ class Home extends BaseController
         $session = \Config\Services::session();
     }
 
+    private function validarParametros($precioMin, $precioMax)
+    {
+        // 2.1.1. S: Detecta incongruencia en los datos
+        if ($precioMin !== null && $precioMax !== null && $precioMin > $precioMax) {
+            return "Error de validación: El precio mínimo no puede ser mayor al precio máximo.";
+        }
+        
+        // Retorna null si no hay errores
+        return null; 
+    }
+
     public function index()
     {
         $prodModel = new ArticuloModel();
         $generoModel = new GeneroModel();
 
         // Capturamos los filtros que vienen por GET desde el formulario
-        $titulo    = $this->request->getGet('titulo') ?: null;
-        $idGenero  = $this->request->getGet('idGenero') ?: null;
-        $precioMin = $this->request->getGet('precioMin') ?: null;
-        $precioMax = $this->request->getGet('precioMax') ?: null;
+        // Convertimos  '' en null
+        $titulo = $this->request->getGet('titulo');
+        $titulo = ($titulo !== '' && $titulo !== null) ? trim($titulo) : null;
 
-        // Verificamos si hay una búsqueda activa
-        if ($titulo || $idGenero || $precioMin || $precioMax) {
-            // Si hay filtros, usamos el método que llama al Procedimiento Almacenado
-            $resultado = $prodModel->getArticulosFiltrados($titulo, $idGenero, $precioMin, $precioMax);
+        $idGenero = $this->request->getGet('idGenero');
+        $idGenero = ($idGenero !== '' && $idGenero !== null) ? $idGenero : null;
+
+        $idAutor = $this->request->getGet('idAutor');
+        $idAutor = ($idAutor !== '' && $idAutor !== null) ? $idAutor : null;
+
+        $precioMin = $this->request->getGet('precioMin');
+        $precioMin = ($precioMin !== '' && $precioMin !== null) ? (float)$precioMin : null;
+
+        $precioMax = $this->request->getGet('precioMax');
+        $precioMax = ($precioMax !== '' && $precioMax !== null) ? (float)$precioMax : null;
+
+
+
+
+        // Llamada explícita al método de validación
+        $error = $this->validarParametros($precioMin, $precioMax);
+        $data['error_validacion'] = $error;
+
+        if ($error) {
+            // Si hay error, frenamos la ejecución y devolvemos un arreglo vacío
+            $resultado = [];
         } else {
-            $consultaOriginal = $prodModel->getArticulos();
-            $resultado = $consultaOriginal['resultado'];
+            // Si pasa la validación, ejecuta la consulta
+            $resultado = $prodModel->getArticulosFiltrados($titulo, $idGenero, $idAutor, $precioMin, $precioMax);
         }
 
-        // Obtenemos todos los géneros para el select de la búsqueda
-        $generos = $generoModel->findAll();
+        // Obtenemos la lista de géneros para armar el menú desplegable (select) en la vista
+        //$generos = $generoModel->findAll();
+        $data['generos'] = $generoModel->findAll();
 
-        // Preparamos los datos para las vistas
+        // Preparamos el arreglo de datos que le vamos a enviar a las vistas
+        $data['autores'] = \Config\Database::connect()->table('autor')->get()->getResultArray(); 
+
         $data['titulo'] = 'Catálogo de Libros';
         $data['productos'] = $resultado;
-        $data['generos'] = $generos;
 
         // Renderizamos el contenido
         echo view('plantillas/head', $data);
