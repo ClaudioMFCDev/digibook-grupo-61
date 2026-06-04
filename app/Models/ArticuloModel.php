@@ -128,7 +128,7 @@ public function getArticuloPorId($idArticulo){
     }
 
     // Método del modelo para ejecutar el procedimiento almacenado en MySQL
-    public function getArticulosFiltrados($titulo, $idGenero, $idAutor, $precioMin, $precioMax) 
+    public function obtenerArticulosFiltrados($titulo, $idGenero, $idAutor, $precioMin, $precioMax) 
     {
         $sql = "CALL sp_buscar_articulos_filtrados(?, ?, ?, ?, ?)";
         $query = $this->db->query($sql, [$titulo, $idGenero, $idAutor, $precioMin, $precioMax]);

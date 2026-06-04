@@ -59,7 +59,7 @@ class Home extends BaseController
             $resultado = [];
         } else {
             // Si pasa la validación, ejecuta la consulta
-            $resultado = $prodModel->getArticulosFiltrados($titulo, $idGenero, $idAutor, $precioMin, $precioMax);
+            $resultado = $prodModel->obtenerArticulosFiltrados($titulo, $idGenero, $idAutor, $precioMin, $precioMax);
         }
 
         // Obtenemos la lista de géneros para armar el menú desplegable (select) en la vista
