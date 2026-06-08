@@ -8,10 +8,9 @@ use App\Models\ReporteDTO;
 
 /**
  * METODO A PROBAR: obtenerReporteConsolidado($fechaDesde, $fechaHasta)
- * * DESCRIPCIÓN: Test Unitario Puro con Mock de Capa de Datos (Database Mocking).
- * Aquí probamos el algoritmo REAL de Claudio. No anulamos su método. 
- * Lo que hacemos es interceptar la conexión de CodeIgniter ($db) para que, en vez de ir a MySQL,
- * devuelva filas simuladas en memoria RAM. Testeamos si el método procesa y mapea correctamente.
+ * * DESCRIPCIÓN: Suite de pruebas unitarias puras bajo la técnica de Caja Negra.
+ * Evalúa el algoritmo REAL de Claudio inyectando respuestas simuladas (Mocks) 
+ * directo en el conector de base de datos ($db) para aislar la infraestructura física.
  */
 class ServicioDashboardUnitTest extends CIUnitTestCase
 {
@@ -21,64 +20,162 @@ class ServicioDashboardUnitTest extends CIUnitTestCase
     }
 
     /**
-     * ESCENARIO 1: Probar que el algoritmo REAL procese y mapee bien los datos analíticos
+     * Helper para construir la infraestructura de simulación de base de datos (Inyección de dependencias)
      */
-    public function testEscenario01_ProcesamientoDeReporteReal()
+    private function prepararServicioConDbMock($filaFake, $proximosResultados = false)
     {
-        $this->consoleLog("\n=================================================================================");
-        $this->consoleLog("🧪 TEST UNITARIO LEGÍTIMO: obtenerReporteConsolidado()");
-        $this->consoleLog("📋 OBJETIVO: Evaluar el algoritmo REAL de Claudio usando una Base de Datos Mockeada");
-        $this->consoleLog("👉 ENTRADAS EVALUADAS: '2026-05-01' al '2026-05-31'");
-
-        // 1. Creamos las filas simuladas que se supone que el SP devolvería en la realidad
-        $filaGlobalFake = (object)[
-            'cantidadVentas' => 45,
-            'totalIngresos'  => 385000.00
-        ];
-
-        // 2. Mockeamos el objeto Query de CodeIgniter para que devuelva nuestra fila simulada
+        // 1. Clonamos el objeto de resultados (Query)
         $queryMock = $this->getMockBuilder(\CodeIgniter\Database\MySQLi\Result::class)
                           ->disableOriginalConstructor()
                           ->getMock();
-                          
-        // Cuando tu método real llame a $query->getRow(), le va a retornar la fila analítica fake
-        $queryMock->method('getRow')->willReturn($filaGlobalFake);
+        $queryMock->method('getRow')->willReturn($filaFake);
 
-        // 3. Mockeamos la Conexión de Base de Datos ($db) de CodeIgniter
+        // 2. Clonamos el gestor de conexión principal
         $dbMock = $this->getMockBuilder(\CodeIgniter\Database\MySQLi\Connection::class)
                        ->disableOriginalConstructor()
                        ->getMock();
-                       
-        // Cuando tu método intente hacer $db->query("CALL..."), va a recibir nuestro QueryMock en vez de ir a XAMPP
         $dbMock->method('query')->willReturn($queryMock);
         
-        // Simulamos la propiedad connID (el driver mysqli de PHP) para los buffers del SP
-        $dbMock->connID = (object)[
-            'next_result'  => function() { return false; }, // Corta el bucle de hilos para no trabarse en memoria
-            'store_result' => function() { return true; }
-        ];
+        // 3. Clonamos el driver nativo de hilos de PHP (mysqli) para el bucle while de limpieza
+        $mysqliMock = $this->getMockBuilder(\mysqli::class)
+                           ->disableOriginalConstructor()
+                           ->onlyMethods(['next_result'])
+                           ->getMock();
+        $mysqliMock->method('next_result')->willReturn($proximosResultados);
+        $dbMock->connID = $mysqliMock;
 
-        // 4. Instanciamos tu servicio REAL
+        // 4. Instanciamos el servicio real e inyectamos el simulador por Reflection
         $servicioReal = new ServicioDashboard();
-
-        // 5. ¡MAGIA ARQUITECTÓNICA!: Usamos PHP Reflection para meterle el conector falso al servicio sin alterar tu código
         $reflection = new \ReflectionClass($servicioReal);
         $dbProperty = $reflection->getProperty('db');
         $dbProperty->setAccessible(true);
-        $dbProperty->setValue($servicioReal, $dbMock); // Reemplazamos la DB real por nuestro Mock de datos
+        $dbProperty->setValue($servicioReal, $dbMock);
 
-        // 6. EJECUTAMOS TU MÉTODO REAL
-        // Tu código va a correr de verdad, pero consumiendo los datos fake que preparamos arriba
-        $resultado = $servicioReal->obtenerReporteConsolidado('2026-05-01', '2026-05-31');
+        return $servicioReal;
+    }
 
-        $this->consoleLog("📥 VERIFICANDO MAPEOS DEL ALGORITMO:");
-        $this->consoleLog("   • ¿Tu código procesó las Ventas?: {$resultado->cantidadVentas} órdenes");
-        $this->consoleLog("   • ¿Tu código procesó los Ingresos?: \${$resultado->totalIngresos}");
-        $this->consoleLog("=================================================================================\n");
+    /**
+     * ESCENARIO 1: Evaluación normal (Camino Feliz)
+     */
+    public function testEscenario01_ReporteConsolidadoNormal()
+    {
+        $this->consoleLog("\n=================================================================================");
+        $this->consoleLog("🧪 CASO 1: Camino Feliz - Período válido");
+        $this->consoleLog("👉 ENTRADAS: '2026-05-01' al '2026-05-31'");
 
-        // 7. ASEVERACIONES: Comprobamos si tu lógica interna mapeó todo dentro del DTO correctamente
+        $filaFake = (object)['cantidadVentas' => 45, 'totalIngresos' => 385000.00];
+        $servicio = $this->prepararServicioConDbMock($filaFake);
+
+        $resultado = $servicio->obtenerReporteConsolidado('2026-05-01', '2026-05-31');
+
+        $this->consoleLog("📥 SIMULACIÓN: SP devuelve filas con registros comerciales.");
+        $this->consoleLog("   • Resultado Mapeado: {$resultado->cantidadVentas} ventas | \${$resultado->totalIngresos}");
+
         $this->assertInstanceOf(ReporteDTO::class, $resultado);
-        $this->assertEquals(45, $resultado->cantidadVentas); // Comprueba que tu casting (int) funcionó
-        $this->assertEquals(385000.00, $resultado->totalIngresos); // Comprueba que tu casting (float) funcionó
+        $this->assertEquals(45, $resultado->cantidadVentas);
+        $this->assertEquals(385000.00, $resultado->totalIngresos);
+    }
+
+    /**
+     * ESCENARIO 2: Valores nulos o vacíos (Carga Inicial)
+     */
+    public function testEscenario02_FechasVaciasPorDefecto()
+    {
+        $this->consoleLog("\n---------------------------------------------------------------------------------");
+        $this->consoleLog("🧪 CASO 2: Carga inicial del sistema (Parámetros vacíos)");
+        $this->consoleLog("👉 ENTRADAS: '' y ''");
+
+        // Si entran vacíos, simulamos que el SP responde con ceros por contingencia
+        $filaFake = (object)['cantidadVentas' => 0, 'totalIngresos' => 0.00];
+        $servicio = $this->prepararServicioConDbMock($filaFake);
+
+        $resultado = $servicio->obtenerReporteConsolidado('', '');
+
+        $this->consoleLog("📥 SIMULACIÓN: El sistema responde con un objeto DTO estructural limpio.");
+        $this->consoleLog("   • Resultado Mapeado: {$resultado->cantidadVentas} ventas | \${$resultado->totalIngresos}");
+
+        $this->assertInstanceOf(ReporteDTO::class, $resultado);
+        $this->assertEquals(0, $resultado->cantidadVentas);
+    }
+
+    /**
+     * ESCENARIO 3: Valor límite erróneo - Inversión lógica (Desde > Hasta)
+     */
+    public function testEscenario03_InversionFronterasDeTiempo()
+    {
+        $this->consoleLog("\n---------------------------------------------------------------------------------");
+        $this->consoleLog("🧪 CASO 3: Valor límite erróneo - Inversión lógica (Desde > Hasta)");
+        $this->consoleLog("👉 ENTRADAS: '2026-06-30' al '2026-06-01'");
+
+        // Al estar invertidas, el SP no macheará registros en el BETWEEN y arrojará nulos/ceros
+        $filaFake = (object)['cantidadVentas' => 0, 'totalIngresos' => 0.00];
+        $servicio = $this->prepararServicioConDbMock($filaFake);
+
+        $resultado = $servicio->obtenerReporteConsolidado('2026-06-30', '2026-06-01');
+
+        $this->consoleLog("📥 SIMULACIÓN: El rango cronológico incoherente no produce mach en la consulta SQL.");
+        $this->assertLessThanOrEqual(0, $resultado->cantidadVentas);
+        $this->assertInstanceOf(ReporteDTO::class, $resultado);
+    }
+
+    /**
+     * ESCENARIO 4: Consulta en período de fechas futuras
+     */
+    public function testEscenario04_RangoFechasFuturas()
+    {
+        $this->consoleLog("\n---------------------------------------------------------------------------------");
+        $this->consoleLog("🧪 CASO 4: Intento de consulta con fechas futuras");
+        $this->consoleLog("👉 ENTRADAS: '2028-01-01' al '2028-01-31'");
+
+        // En el futuro no existen datos de compras físicos cargados
+        $filaFake = (object)['cantidadVentas' => 0, 'totalIngresos' => 0.00];
+        $servicio = $this->prepararServicioConDbMock($filaFake);
+
+        $resultado = $servicio->obtenerReporteConsolidado('2028-01-01', '2028-01-31');
+
+        $this->consoleLog("📥 SIMULACIÓN: El motor retorna vacío por inexistencia cronológica de transacciones.");
+        $this->assertEquals(0.00, $resultado->totalIngresos);
+        $this->assertInstanceOf(ReporteDTO::class, $resultado);
+    }
+
+    /**
+     * ESCENARIO 5: Rango válido pero sin transacciones comerciales
+     */
+    public function testEscenario05_RangoValidoSinTransacciones()
+    {
+        $this->consoleLog("\n---------------------------------------------------------------------------------");
+        $this->consoleLog("🧪 CASO 5: Rango temporal correcto, pero sin transacciones históricas");
+        $this->consoleLog("👉 ENTRADAS: '2025-01-01' al '2025-01-31'");
+
+        // Período válido pero el SP devuelve ceros porque nadie compró nada en ese mes
+        $filaFake = (object)['cantidadVentas' => 0, 'totalIngresos' => 0.00];
+        $servicio = $this->prepararServicioConDbMock($filaFake);
+
+        $resultado = $servicio->obtenerReporteConsolidado('2025-01-01', '2025-01-31');
+
+        $this->consoleLog("📥 SIMULACIÓN: Período histórico desierto. Retorna ceros para gatillar la alerta en controlador.");
+        $this->assertEquals(0, $resultado->cantidadVentas);
+        $this->assertInstanceOf(ReporteDTO::class, $resultado);
+    }
+
+    /**
+     * ESCENARIO 6: Tipo de dato incorrecto (Entero enviado en vez de String Date)
+     */
+    public function testEscenario06_TipoDeDatoIncorrecto()
+    {
+        $this->consoleLog("\n---------------------------------------------------------------------------------");
+        $this->consoleLog("🧪 CASO 6: Tipo de dato incorrecto (Parámetro Integer en vez de String Date)");
+        $this->consoleLog("👉 ENTRADAS: 20260501 (Entero) y '2026-05-31'");
+
+        // El algoritmo real recibe el entero. Evaluamos que la capa de abstracción no explote.
+        $filaFake = (object)['cantidadVentas' => 0, 'totalIngresos' => 0.00];
+        $servicio = $this->prepararServicioConDbMock($filaFake);
+
+        // Pasamos un número entero crudo en la primera posición
+        $resultado = $servicio->obtenerReporteConsolidado(20260501, '2026-05-31');
+
+        $this->consoleLog("📥 SIMULACIÓN: El algoritmo procesa la variable numérica convirtiéndola/tratándola de forma segura.");
+        $this->assertInstanceOf(ReporteDTO::class, $resultado);
+        $this->consoleLog("=================================================================================\n");
     }
 }

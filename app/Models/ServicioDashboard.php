@@ -13,7 +13,7 @@ class ServicioDashboard extends Model
      */
     public function obtenerReporteConsolidado($fechaDesde, $fechaHasta)
     {
-        $db = \Config\Database::connect();
+        $db = $this->db ?? \Config\Database::connect();        
         
         // Ejecutamos el procedimiento almacenado analítico de 4 Result Sets
         $sql = "CALL sp_obtener_reporte_comercial(?, ?)";

@@ -1,3 +1,8 @@
 Servicio Dashboard Unit (App\Models\ServicioDashboardUnit)
- [ ] Escenario01 ProcesamientoDeReporteReal
+ [x] Escenario01 ReporteConsolidadoNormal
+ [x] Escenario02 FechasVaciasPorDefecto
+ [x] Escenario03 InversionFronterasDeTiempo
+ [x] Escenario04 RangoFechasFuturas
+ [x] Escenario05 RangoValidoSinTransacciones
+ [x] Escenario06 TipoDeDatoIncorrecto
 
