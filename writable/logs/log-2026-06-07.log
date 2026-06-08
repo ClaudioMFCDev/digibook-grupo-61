@@ -1,0 +1,1074 @@
+INFO - 2026-06-07 13:15:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 13:15:53 --> Error: Call to undefined method App\Services\ServicioReporte::getReporteConsolidated()
+in APPPATH\Controllers\Dashboard.php on line 40.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:30:29 --> Error: Call to undefined method App\Services\ServicioReporte::getReporteConsolidated()
+in APPPATH\Controllers\Dashboard.php on line 40.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:37:39 --> Error: Call to undefined method App\Services\ServicioReporte::obtenerReporteConsolidado()
+in APPPATH\Controllers\Dashboard.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:48:48 --> Error: Call to undefined method App\Services\ServicioReporte::obtenerReporteConsolidado()
+in APPPATH\Controllers\Dashboard.php on line 41.
+ 1 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:54:39 --> BadMethodCallException: Call to undefined method App\Models\CompraModel::obtenerReporteConsolidado
+in SYSTEMPATH\Model.php on line 874.
+ 1 APPPATH\Models\ServicioDashboard.php(37): CodeIgniter\Model->__call('obtenerReporteConsolidado', [...])
+ 2 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 3 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 14:55:03 --> mysqli_sql_exception: Table 'digibook2.comprobante' doesn't exist in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(tota...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(tota...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(tota...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(45): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 14:55:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'digibook2.comprobante' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_comprobante) as cantidadVentas
+FROM `comprobante`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(45): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:55:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'digibook2.comprobante' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_comprobante) as cantidadVentas
+FROM `comprobante`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_comprobante) as cantidadVentas
+FROM `comprobante`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_comprobante) as cantidadVentas
+FROM `comprobante`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(45): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:55:03 --> [Caused by] mysqli_sql_exception: Table 'digibook2.comprobante' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(total) as totalIngresos, COUNT(id_comprobante) as cantidadVentas
+FROM `comprobante`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_comprobante) as cantidadVentas
+FROM `comprobante`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_comprobante) as cantidadVentas
+FROM `comprobante`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_comprobante) as cantidadVentas
+FROM `comprobante`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(45): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 14:59:10 --> mysqli_sql_exception: Unknown column 'compra' in 'field list' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(tota...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(tota...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(tota...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(45): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 14:59:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'compra' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(compra) as cantidadVentas
+FROM `compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(45): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:59:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(compra) as cantidadVentas
+FROM `compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(compra) as cantidadVentas
+FROM `compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(compra) as cantidadVentas
+FROM `compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(45): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:59:10 --> [Caused by] mysqli_sql_exception: Unknown column 'compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(total) as totalIngresos, COUNT(compra) as cantidadVentas
+FROM `compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(compra) as cantidadVentas
+FROM `compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(compra) as cantidadVentas
+FROM `compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(compra) as cantidadVentas
+FROM `compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(45): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 14:59:41 --> mysqli_sql_exception: Table 'digibook2.venta' doesn't exist in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(tota...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(tota...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(tota...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(48): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 14:59:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'digibook2.venta' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_venta) as cantidadVentas
+FROM `venta`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:59:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'digibook2.venta' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_venta) as cantidadVentas
+FROM `venta`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_venta) as cantidadVentas
+FROM `venta`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_venta) as cantidadVentas
+FROM `venta`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 14:59:41 --> [Caused by] mysqli_sql_exception: Table 'digibook2.venta' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(total) as totalIngresos, COUNT(id_venta) as cantidadVentas
+FROM `venta`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_venta) as cantidadVentas
+FROM `venta`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_venta) as cantidadVentas
+FROM `venta`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_venta) as cantidadVentas
+FROM `venta`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(48): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 15:02:09 --> mysqli_sql_exception: Unknown column 'id_compra' in 'field list' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(tota...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(tota...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(tota...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 15:02:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:09 --> [Caused by] mysqli_sql_exception: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 15:02:10 --> mysqli_sql_exception: Unknown column 'id_compra' in 'field list' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(tota...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(tota...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(tota...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 15:02:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:10 --> [Caused by] mysqli_sql_exception: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 15:02:10 --> mysqli_sql_exception: Unknown column 'id_compra' in 'field list' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(tota...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(tota...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(tota...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 15:02:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:10 --> [Caused by] mysqli_sql_exception: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 15:02:11 --> mysqli_sql_exception: Unknown column 'id_compra' in 'field list' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(tota...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(tota...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(tota...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 15:02:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:11 --> [Caused by] mysqli_sql_exception: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 15:02:11 --> mysqli_sql_exception: Unknown column 'id_compra' in 'field list' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(tota...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(tota...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(tota...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 15:02:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:11 --> [Caused by] mysqli_sql_exception: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 15:02:11 --> mysqli_sql_exception: Unknown column 'id_compra' in 'field list' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(tota...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(tota...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(tota...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 15:02:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:02:11 --> [Caused by] mysqli_sql_exception: Unknown column 'id_compra' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= \'2026-05-08\'
+AND `fecha` <= \'2026-06-07\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total) as totalIngresos, COUNT(id_compra) as cantidadVentas
+FROM `Compra`
+WHERE `fecha` >= :fecha:
+AND `fecha` <= :fecha.1:', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-07 15:03:41 --> mysqli_sql_exception: Unknown column 'd.cantidad' in 'field list' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `a`.`tit...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`tit...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`tit...')
+#3 C:\xampp\htdocs\digibook\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`tit...', Array, false)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(72): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-07 15:03:41 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'd.cantidad' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`titulo`, SUM(d.cantidad) as unidades
+FROM `detallescompra` `d`
+JOIN `Compra` `c` ON `c`.`idcompra` = `d`.`idcompra`
+JOIN `articulo` `a` ON `a`.`id_articulo` = `d`.`id_articulo`
+WHERE `c`.`fecha` >= :c.fecha:
+AND `c`.`fecha` <= :c.fecha.1:
+GROUP BY `a`.`id_articulo`
+ORDER BY `unidades` DESC
+ LIMIT 3', [...], false)
+ 2 APPPATH\Models\ServicioDashboard.php(72): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:03:41 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'd.cantidad' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`titulo`, SUM(d.cantidad) as unidades
+FROM `detallescompra` `d`
+JOIN `Compra` `c` ON `c`.`idcompra` = `d`.`idcompra`
+JOIN `articulo` `a` ON `a`.`id_articulo` = `d`.`id_articulo`
+WHERE `c`.`fecha` >= \'2026-05-08\'
+AND `c`.`fecha` <= \'2026-06-07\'
+GROUP BY `a`.`id_articulo`
+ORDER BY `unidades` DESC
+ LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`titulo`, SUM(d.cantidad) as unidades
+FROM `detallescompra` `d`
+JOIN `Compra` `c` ON `c`.`idcompra` = `d`.`idcompra`
+JOIN `articulo` `a` ON `a`.`id_articulo` = `d`.`id_articulo`
+WHERE `c`.`fecha` >= \'2026-05-08\'
+AND `c`.`fecha` <= \'2026-06-07\'
+GROUP BY `a`.`id_articulo`
+ORDER BY `unidades` DESC
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`titulo`, SUM(d.cantidad) as unidades
+FROM `detallescompra` `d`
+JOIN `Compra` `c` ON `c`.`idcompra` = `d`.`idcompra`
+JOIN `articulo` `a` ON `a`.`id_articulo` = `d`.`id_articulo`
+WHERE `c`.`fecha` >= :c.fecha:
+AND `c`.`fecha` <= :c.fecha.1:
+GROUP BY `a`.`id_articulo`
+ORDER BY `unidades` DESC
+ LIMIT 3', [...], false)
+ 4 APPPATH\Models\ServicioDashboard.php(72): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 15:03:41 --> [Caused by] mysqli_sql_exception: Unknown column 'd.cantidad' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `a`.`titulo`, SUM(d.cantidad) as unidades
+FROM `detallescompra` `d`
+JOIN `Compra` `c` ON `c`.`idcompra` = `d`.`idcompra`
+JOIN `articulo` `a` ON `a`.`id_articulo` = `d`.`id_articulo`
+WHERE `c`.`fecha` >= \'2026-05-08\'
+AND `c`.`fecha` <= \'2026-06-07\'
+GROUP BY `a`.`id_articulo`
+ORDER BY `unidades` DESC
+ LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.`titulo`, SUM(d.cantidad) as unidades
+FROM `detallescompra` `d`
+JOIN `Compra` `c` ON `c`.`idcompra` = `d`.`idcompra`
+JOIN `articulo` `a` ON `a`.`id_articulo` = `d`.`id_articulo`
+WHERE `c`.`fecha` >= \'2026-05-08\'
+AND `c`.`fecha` <= \'2026-06-07\'
+GROUP BY `a`.`id_articulo`
+ORDER BY `unidades` DESC
+ LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.`titulo`, SUM(d.cantidad) as unidades
+FROM `detallescompra` `d`
+JOIN `Compra` `c` ON `c`.`idcompra` = `d`.`idcompra`
+JOIN `articulo` `a` ON `a`.`id_articulo` = `d`.`id_articulo`
+WHERE `c`.`fecha` >= \'2026-05-08\'
+AND `c`.`fecha` <= \'2026-06-07\'
+GROUP BY `a`.`id_articulo`
+ORDER BY `unidades` DESC
+ LIMIT 3')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `a`.`titulo`, SUM(d.cantidad) as unidades
+FROM `detallescompra` `d`
+JOIN `Compra` `c` ON `c`.`idcompra` = `d`.`idcompra`
+JOIN `articulo` `a` ON `a`.`id_articulo` = `d`.`id_articulo`
+WHERE `c`.`fecha` >= :c.fecha:
+AND `c`.`fecha` <= :c.fecha.1:
+GROUP BY `a`.`id_articulo`
+ORDER BY `unidades` DESC
+ LIMIT 3', [...], false)
+ 5 APPPATH\Models\ServicioDashboard.php(72): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(42): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-08', '2026-06-07')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2026-06-07 15:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 15:07:26 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: dashboard_comercial.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard_comercial.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('dashboard_comercial', [], true)
+ 3 APPPATH\Controllers\Dashboard.php(53): view('dashboard_comercial', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2026-06-07 15:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 15:08:46 --> ErrorException: Undefined variable $titulo
+in APPPATH\Views\Dashboard\index.php on line 5.
+ 1 APPPATH\Views\Dashboard\index.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\digibook\\app\\Views\\Dashboard\\index.php', 5)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\digibook\\app\\Views\\Dashboard\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Dashboard/index', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(53): view('Dashboard/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2026-06-07 15:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 15:09:47 --> ErrorException: Attempt to read property "totalIngresos" on null
+in APPPATH\Views\Dashboard\index.php on line 50.
+ 1 APPPATH\Views\Dashboard\index.php(50): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "totalIngresos" on null', 'C:\\xampp\\htdocs\\digibook\\app\\Views\\Dashboard\\index.php', 50)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\digibook\\app\\Views\\Dashboard\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Dashboard/index', [], true)
+ 5 APPPATH\Controllers\Dashboard.php(52): view('Dashboard/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2026-06-07 15:10:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 15:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 15:11:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 15:19:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 15:21:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 15:21:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 15:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 15:24:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 16:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 16:07:43 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:22:07 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:22:08 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:22:08 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:22:08 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:22:08 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:23:25 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:23:26 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:23:27 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:23:27 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-07 16:31:55 --> CodeIgniter\View\Exceptions\ViewException: Archivo inválido: Auth/login.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Auth/login.php')
+ 2 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('Auth/login', [], true)
+ 3 APPPATH\Controllers\Auth.php(14): view('Auth/login')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Auth->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2026-06-07 17:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:25:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:52:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:53:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-07 17:53:44 --> ErrorException: Access level to App\Controllers\Home::$session must be protected (as in class App\Controllers\BaseController) or weaker
+in APPPATH\Controllers\Home.php on line 10.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2026-06-07 17:55:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:55:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:55:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:55:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:55:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:55:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:58:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:58:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:58:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:59:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 17:59:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:40 --> Cart Class Initialized
+INFO - 2026-06-07 18:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:01:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:02:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:02:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:02:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:02:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:04:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:04:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:08:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:08:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 18:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:00:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:08:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:08:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:08:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:08:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:09:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:09:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:13:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:21:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:27:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:27:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:28:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:32:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:32:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:32:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:32:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:32:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:33:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:33:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:34:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:34:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:47:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:48:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:49:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:49:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:49:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:51:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:54:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 19:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:09:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:09:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:10:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:10:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:10:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:12:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:18:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:20:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:21:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:21:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:21:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:21:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:21:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:31:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:31:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:32:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:52:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:53:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:53:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 20:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:07:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:07:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:08:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:08:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:09:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:11:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:12:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:14:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:17:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:19:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:19:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 21:26:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:18:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:18:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:20:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:21:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:21:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:21:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:21:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:23:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:23:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:23:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:23:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:24:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:30:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:31:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:31:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:32:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:43:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 22:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 23:02:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 23:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 23:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-07 23:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="App\Models\ServicioDashboardUnitTest" file="C:\xampp\htdocs\digibook\tests\app\Models\ServicioDashboardUnitTest.php" tests="1" assertions="0" errors="1" warnings="0" failures="0" skipped="0" time="2.941835">
+    <testcase name="testEscenario01_ProcesamientoDeReporteReal" class="App\Models\ServicioDashboardUnitTest" classname="App.Models.ServicioDashboardUnitTest" file="C:\xampp\htdocs\digibook\tests\app\Models\ServicioDashboardUnitTest.php" line="26" assertions="0" time="2.941835">
+      <error type="CodeIgniter\Database\Exceptions\DatabaseException">App\Models\ServicioDashboardUnitTest::testEscenario01_ProcesamientoDeReporteReal
+CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.&#13;
+Main connection [SQLite3]: Class "SQLite3" not found
+
+C:\xampp\htdocs\digibook\system\Database\BaseConnection.php:428
+C:\xampp\htdocs\digibook\system\Database\SQLite3\Connection.php:59
+C:\xampp\htdocs\digibook\system\Database\BaseConnection.php:575
+C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php:20
+C:\xampp\htdocs\digibook\tests\app\Models\ServicioDashboardUnitTest.php:72</error>
+    </testcase>
+  </testsuite>
+</testsuites>

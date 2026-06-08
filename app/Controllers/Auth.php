@@ -11,7 +11,7 @@ class Auth extends BaseController
      */
     public function index()
     {
-        return view('login');
+        return view('Contenido/login');    
     }
 
     /**
@@ -20,37 +20,38 @@ class Auth extends BaseController
     public function autenticar()
     {
         $session = session();
+        $db = \Config\Database::connect();
         
         // Grab credentials from POST request
         $email = $this->request->getPost('email');
         $contrasena = $this->request->getPost('contrasena');
 
-        // Hardcoded credentials for testing/defense purposes
-        $usuarioHardcodeado = [
-            'dni'        => '40123456',
-            'nombre'     => 'Administrador Claudio',
-            'email'      => 'admin@digibook.com',
-            'contrasena' => 'admin123',
-            'sexo'       => 'M',
-            'rol'        => 'admin'
-        ];
+        // Query the database to find the user by credentials
+        $usuario = $db->table('usuario')
+            ->where('email', $email)
+            ->where('contrasenia', $contrasena)
+            ->get()
+            ->getRowArray();
 
-        // Basic credentials matching logic
-        if ($email === $usuarioHardcodeado['email'] && $contrasena === $usuarioHardcodeado['contrasena']) {
-            
-            // Set session global variables
+        if ($usuario) {
+            // Set session global variables based on database entity attributes
             $sessionData = [
-                'dni'      => $usuarioHardcodeado['dni'],
-                'nombre'   => $usuarioHardcodeado['nombre'],
-                'email'    => $usuarioHardcodeado['email'],
-                'rol'      => $usuarioHardcodeado['rol'],
-                'isLoggedIn' => true
+                'dni'          => $usuario['dni'],
+                'nombre'       => $usuario['nombre'],
+                'email'        => $usuario['email'],
+                'idTipoUsuario'=> (int)$usuario['idTipoUsuario'], // 1 = Admin, 2 = Cliente
+                'isLoggedIn'   => true
             ];
             
             $session->set($sessionData);
 
-            // Redirect to dashboard if successful
-            return redirect()->to(base_url('dashboard'));
+            // Redirect to dashboard if successful and user is Admin
+            if ((int)$usuario['idTipoUsuario'] === 1) {
+                return redirect()->to(base_url('dashboard'));
+            }
+            
+            // Redirect to home if user is a standard customer
+            return redirect()->to(base_url('/'));
         } else {
             // Set temporary flash message and redirect back
             $session->setFlashdata('error', 'Credenciales inválidas. Intente nuevamente.');
@@ -64,6 +65,6 @@ class Auth extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to(base_url('login'));
+        return redirect()->to(base_url('/'));
     }
 }
