@@ -13,20 +13,19 @@ class ReporteDTO
 
     /**
      * Constructor para inicializar el contenedor de transporte de datos analíticos.
-     * Controller to manage dashboard data transfer object
      */
     public function __construct(
         $cantidadVentas = 0, 
         $totalIngresos = 0.00, 
         $demografiaClientes = 'Sin Datos', 
         $topLibros = [],
-        $tendenciasBusqueda = [] // <-- Reemplazamos 'propiedadCinco' por tu variable real
+        $tendenciasBusqueda = [] 
     )
     {
         $this->totalIngresos = (float)$totalIngresos;
         $this->cantidadVentas = (int)$cantidadVentas;
         $this->topLibros = $topLibros;
-        $this->tendenciasBusqueda = $tendenciasBusqueda; // <-- Ahora sí existe y no va a tirar error
+        $this->tendenciasBusqueda = $tendenciasBusqueda; 
         $this->demografiaClientes = $demografiaClientes;
     }
 }

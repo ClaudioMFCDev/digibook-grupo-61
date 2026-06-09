@@ -176,3 +176,245 @@ Stack trace:
 #13 C:\xampp\htdocs\digibook\vendor\phpunit\phpunit\phpunit(107): PHPUnit\TextUI\Command::main()
 #14 C:\xampp\htdocs\digibook\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
 #15 {main}
+INFO - 2026-06-08 22:53:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-08 23:22:36 --> mysqli_sql_exception: Unknown column 'u.sexo' in 'field list' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT u.sexo A...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT u.sexo A...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT u.sexo A...')
+#3 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseConnection->query('SELECT u.sexo A...', Array)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(37): App\Models\ServicioDashboard->obtenerDemografiaAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-08 23:22:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'u.sexo' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseConnection->query('SELECT u.sexo AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN ? AND ? 
+                GROUP BY u.sexo ORDER BY COUNT(c.idCompra) DESC LIMIT 1', [...])
+ 2 APPPATH\Models\ServicioDashboard.php(37): App\Models\ServicioDashboard->obtenerDemografiaAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+ 3 APPPATH\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-08 23:22:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'u.sexo' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT u.sexo AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.sexo ORDER BY COUNT(c.idCompra) DESC LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT u.sexo AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.sexo ORDER BY COUNT(c.idCompra) DESC LIMIT 1')
+ 3 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseConnection->query('SELECT u.sexo AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN ? AND ? 
+                GROUP BY u.sexo ORDER BY COUNT(c.idCompra) DESC LIMIT 1', [...])
+ 4 APPPATH\Models\ServicioDashboard.php(37): App\Models\ServicioDashboard->obtenerDemografiaAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+ 5 APPPATH\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-08 23:22:36 --> [Caused by] mysqli_sql_exception: Unknown column 'u.sexo' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT u.sexo AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.sexo ORDER BY COUNT(c.idCompra) DESC LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT u.sexo AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.sexo ORDER BY COUNT(c.idCompra) DESC LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT u.sexo AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.sexo ORDER BY COUNT(c.idCompra) DESC LIMIT 1')
+ 4 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseConnection->query('SELECT u.sexo AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN ? AND ? 
+                GROUP BY u.sexo ORDER BY COUNT(c.idCompra) DESC LIMIT 1', [...])
+ 5 APPPATH\Models\ServicioDashboard.php(37): App\Models\ServicioDashboard->obtenerDemografiaAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+ 6 APPPATH\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-08 23:23:56 --> mysqli_sql_exception: Unknown column 'c.idUsuario' in 'on clause' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT u.genero...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT u.genero...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT u.genero...')
+#3 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseConnection->query('SELECT u.genero...', Array)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(37): App\Models\ServicioDashboard->obtenerDemografiaAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-08 23:23:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c.idUsuario' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseConnection->query('SELECT u.genero AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN ? AND ? 
+                GROUP BY u.genero ORDER BY COUNT(c.idCompra) DESC LIMIT 1', [...])
+ 2 APPPATH\Models\ServicioDashboard.php(37): App\Models\ServicioDashboard->obtenerDemografiaAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+ 3 APPPATH\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-08 23:23:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'c.idUsuario' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT u.genero AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.genero ORDER BY COUNT(c.idCompra) DESC LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT u.genero AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.genero ORDER BY COUNT(c.idCompra) DESC LIMIT 1')
+ 3 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseConnection->query('SELECT u.genero AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN ? AND ? 
+                GROUP BY u.genero ORDER BY COUNT(c.idCompra) DESC LIMIT 1', [...])
+ 4 APPPATH\Models\ServicioDashboard.php(37): App\Models\ServicioDashboard->obtenerDemografiaAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+ 5 APPPATH\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-08 23:23:56 --> [Caused by] mysqli_sql_exception: Unknown column 'c.idUsuario' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT u.genero AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.genero ORDER BY COUNT(c.idCompra) DESC LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT u.genero AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.genero ORDER BY COUNT(c.idCompra) DESC LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT u.genero AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\' 
+                GROUP BY u.genero ORDER BY COUNT(c.idCompra) DESC LIMIT 1')
+ 4 APPPATH\Models\ServicioDashboard.php(51): CodeIgniter\Database\BaseConnection->query('SELECT u.genero AS demografia FROM compra c 
+                JOIN usuario u ON c.idUsuario = u.idUsuario 
+                WHERE c.fecha BETWEEN ? AND ? 
+                GROUP BY u.genero ORDER BY COUNT(c.idCompra) DESC LIMIT 1', [...])
+ 5 APPPATH\Models\ServicioDashboard.php(37): App\Models\ServicioDashboard->obtenerDemografiaAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+ 6 APPPATH\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2026-06-08 23:24:37 --> mysqli_sql_exception: Unknown column 'dc.cantidad' in 'order clause' in C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\digibook\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT g.nombre...', 0)
+#1 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT g.nombre...')
+#2 C:\xampp\htdocs\digibook\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT g.nombre...')
+#3 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(64): CodeIgniter\Database\BaseConnection->query('SELECT g.nombre...', Array)
+#4 C:\xampp\htdocs\digibook\app\Models\ServicioDashboard.php(38): App\Models\ServicioDashboard->obtenerTendenciasAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+#5 C:\xampp\htdocs\digibook\app\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+#6 C:\xampp\htdocs\digibook\system\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+#7 C:\xampp\htdocs\digibook\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\xampp\htdocs\digibook\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\digibook\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2026-06-08 23:24:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dc.cantidad' in 'order clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\ServicioDashboard.php(64): CodeIgniter\Database\BaseConnection->query('SELECT g.nombre AS genero_libro FROM compra c
+                JOIN detallescompra dc ON c.idCompra = dc.idCompra
+                JOIN articulo a ON dc.idLibro = a.idLibro
+                JOIN genero g ON a.idGenero = g.idGenero
+                WHERE c.fecha BETWEEN ? AND ?
+                GROUP BY g.idGenero, g.nombre ORDER BY SUM(dc.cantidad) DESC LIMIT 3', [...])
+ 2 APPPATH\Models\ServicioDashboard.php(38): App\Models\ServicioDashboard->obtenerTendenciasAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+ 3 APPPATH\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+ 4 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-08 23:24:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dc.cantidad' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT g.nombre AS genero_libro FROM compra c
+                JOIN detallescompra dc ON c.idCompra = dc.idCompra
+                JOIN articulo a ON dc.idLibro = a.idLibro
+                JOIN genero g ON a.idGenero = g.idGenero
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\'
+                GROUP BY g.idGenero, g.nombre ORDER BY SUM(dc.cantidad) DESC LIMIT 3')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT g.nombre AS genero_libro FROM compra c
+                JOIN detallescompra dc ON c.idCompra = dc.idCompra
+                JOIN articulo a ON dc.idLibro = a.idLibro
+                JOIN genero g ON a.idGenero = g.idGenero
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\'
+                GROUP BY g.idGenero, g.nombre ORDER BY SUM(dc.cantidad) DESC LIMIT 3')
+ 3 APPPATH\Models\ServicioDashboard.php(64): CodeIgniter\Database\BaseConnection->query('SELECT g.nombre AS genero_libro FROM compra c
+                JOIN detallescompra dc ON c.idCompra = dc.idCompra
+                JOIN articulo a ON dc.idLibro = a.idLibro
+                JOIN genero g ON a.idGenero = g.idGenero
+                WHERE c.fecha BETWEEN ? AND ?
+                GROUP BY g.idGenero, g.nombre ORDER BY SUM(dc.cantidad) DESC LIMIT 3', [...])
+ 4 APPPATH\Models\ServicioDashboard.php(38): App\Models\ServicioDashboard->obtenerTendenciasAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+ 5 APPPATH\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+ 6 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2026-06-08 23:24:37 --> [Caused by] mysqli_sql_exception: Unknown column 'dc.cantidad' in 'order clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT g.nombre AS genero_libro FROM compra c
+                JOIN detallescompra dc ON c.idCompra = dc.idCompra
+                JOIN articulo a ON dc.idLibro = a.idLibro
+                JOIN genero g ON a.idGenero = g.idGenero
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\'
+                GROUP BY g.idGenero, g.nombre ORDER BY SUM(dc.cantidad) DESC LIMIT 3', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT g.nombre AS genero_libro FROM compra c
+                JOIN detallescompra dc ON c.idCompra = dc.idCompra
+                JOIN articulo a ON dc.idLibro = a.idLibro
+                JOIN genero g ON a.idGenero = g.idGenero
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\'
+                GROUP BY g.idGenero, g.nombre ORDER BY SUM(dc.cantidad) DESC LIMIT 3')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT g.nombre AS genero_libro FROM compra c
+                JOIN detallescompra dc ON c.idCompra = dc.idCompra
+                JOIN articulo a ON dc.idLibro = a.idLibro
+                JOIN genero g ON a.idGenero = g.idGenero
+                WHERE c.fecha BETWEEN \'2026-05-09\' AND \'2026-06-08\'
+                GROUP BY g.idGenero, g.nombre ORDER BY SUM(dc.cantidad) DESC LIMIT 3')
+ 4 APPPATH\Models\ServicioDashboard.php(64): CodeIgniter\Database\BaseConnection->query('SELECT g.nombre AS genero_libro FROM compra c
+                JOIN detallescompra dc ON c.idCompra = dc.idCompra
+                JOIN articulo a ON dc.idLibro = a.idLibro
+                JOIN genero g ON a.idGenero = g.idGenero
+                WHERE c.fecha BETWEEN ? AND ?
+                GROUP BY g.idGenero, g.nombre ORDER BY SUM(dc.cantidad) DESC LIMIT 3', [...])
+ 5 APPPATH\Models\ServicioDashboard.php(38): App\Models\ServicioDashboard->obtenerTendenciasAuxiliar(Object(CodeIgniter\Database\MySQLi\Connection), '2026-05-09', '2026-06-08')
+ 6 APPPATH\Controllers\Dashboard.php(63): App\Models\ServicioDashboard->obtenerReporteConsolidado('2026-05-09', '2026-06-08')
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2026-06-08 23:25:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:31:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:31:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:31:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:31:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:31:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:31:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:32:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:33:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:34:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-08 23:35:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

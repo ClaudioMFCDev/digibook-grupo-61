@@ -14,7 +14,6 @@ class ValidarPeriodo implements ValidadorStrategy
         $fin = strtotime($datos['hasta']);
         $hoy = time();
 
-        // Check chronological integrity: desde <= hasta AND hasta <= today
         return ($inicio <= $fin) && ($fin <= $hoy);
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\ServicioDashboard;
-use App\Libraries\ValidarPeriodo;
+use App\Libraries\ValidarPeriodo; 
 
 class Dashboard extends BaseController 
 {
@@ -11,75 +11,63 @@ class Dashboard extends BaseController
 
     public function __construct() 
     {
+        // Constructor para inicializar el modelo orquestador del tablero
         $this->servicioDashboard = new ServicioDashboard();
     }
 
-    /**
-     * Controlador principal para analizar filtros y enviar métricas
-     * Controller to handle commercial dashboard visualization and filtering
-     */
     public function index() 
     {
-        // 1. Detectar parámetros por POST
+        // 1. Captura de parámetros enviados desde el formulario por POST
         $fechaDesde = $this->request->getPost('fechaDesde');
         $fechaHasta = $this->request->getPost('fechaHasta');
         
-        $hoy = date('Y-m-d');
-
-        // Variables locales para controlar las alertas por pantalla de forma limpia
         $alertaError = null;
         $alertaInfo  = null;
 
-        // NUEVA EVALUACIÓN: Si el usuario envió el formulario pero dejó una o ambas fechas vacías
+        // Control de interfaz por si el usuario envía campos vacíos
         if ($this->request->getMethod() === 'post' && (empty($fechaDesde) || empty($fechaHasta))) {
-            
             $alertaError = 'Se necesitan ambas fechas para realizar la consulta.';
-            
-            // Forzar rango por defecto de contingencia
             $fechaDesde = date('Y-m-d', strtotime('-30 days'));
             $fechaHasta = date('Y-m-d');
             $reporteDTO = session()->get('reporte_defecto');
-
-        // Si es la carga inicial legítima de la página (petición GET ordinaria)
-        } elseif (empty($fechaDesde) || empty($fechaHasta)) {
             
+        // Carga inicial legítima del sistema (Petición GET ordinaria sin filtros)
+        } elseif (empty($fechaDesde) || empty($fechaHasta)) {
             $fechaDesde = date('Y-m-d', strtotime('-30 days'));
             $fechaHasta = date('Y-m-d');
-            
         }
 
-        // Si no saltó el error de campos vacíos arriba, continuamos con las validaciones de negocio
+        // IMPLEMENTACIÓN DEL PATRÓN STRATEGY
         if ($alertaError === null) {
             
             $datosAValidar = ['desde' => $fechaDesde, 'hasta' => $fechaHasta];
-            $validador = new ValidarPeriodo();
-            $esFutura = ($fechaDesde > $hoy || $fechaHasta > $hoy);
             
-            // EVALUACIÓN 1: Verificar si el usuario intentó viajar al futuro
-            if ($esFutura) {
-                $alertaError = 'Error: El sistema detectó fechas superiores a la actual. Operación frenada.';
+            // Instanciamos la estrategia concreta del patrón
+            $validador = new ValidarPeriodo();
+
+            // DELEGACIÓN: El controlador no calcula marcas de tiempo, solo le pregunta a la estrategia
+            if (!$validador->validar($datosAValidar)) {
                 
+                // Mensaje unificado para los casos fallidos de fechas invertidas o futuras
+                $alertaError = 'Error: El rango de fechas seleccionado es incoherente o superior a la fecha actual. Operación frenada.';
+                
+                // Contingencia segura: Forzamos la restauración de los datos por defecto desde la sesión
                 $fechaDesde = date('Y-m-d', strtotime('-30 days'));
                 $fechaHasta = date('Y-m-d');
                 $reporteDTO = session()->get('reporte_defecto');
                 
-            // EVALUACIÓN 2: Verificar si las fechas están invertidas
-            } elseif (!$validador->validar($datosAValidar)) {
-                $alertaError = 'Error: El rango de fechas seleccionado es incoherente (la fecha desde no puede ser mayor a la fecha hasta).';
-                
-                $fechaDesde = date('Y-m-d', strtotime('-30 days'));
-                $fechaHasta = date('Y-m-d');
-                $reporteDTO = session()->get('reporte_defecto');
-                
-            // EVALUACIÓN 3: Si todo está perfecto, se procesa el flujo normal de negocio
             } else {
+                
+                // CAMINO FELIZ Y GUARDADO DE DATOS POR DEFECTO EN SESIÓN
+                // Ejecución del método real del servicio de datos
                 $reporteDTO = $this->servicioDashboard->obtenerReporteConsolidado($fechaDesde, $fechaHasta);
 
+                // Si es la primera vez que entra a la app, congelamos este reporte analítico en la sesión
                 if (!session()->has('reporte_defecto')) {
                     session()->set('reporte_defecto', $reporteDTO);
                 }
 
-                // Camino Alternativo 2: Período pasado válido pero sin transacciones
+                // Curso Alternativo 2: El rango temporal es correcto pero la base de datos está vacía
                 if ($reporteDTO->cantidadVentas == 0) {
                     $alertaInfo = 'Advertencia: El período seleccionado no registra movimientos comerciales. Se restauraron los datos por defecto.';
                     $reporteDTO = session()->get('reporte_defecto');
@@ -87,12 +75,12 @@ class Dashboard extends BaseController
             }
         }
 
-        // Si por algún flujo colateral quedó el objeto DTO sin instanciar, traemos el de defecto por seguridad
+        // Respaldo de seguridad absoluta por si falló alguna asignación en memoria
         if (!isset($reporteDTO) || $reporteDTO === null) {
             $reporteDTO = session()->get('reporte_defecto') ?? $this->servicioDashboard->obtenerReporteConsolidado($fechaDesde, $fechaHasta);
         }
 
-        // 4. Enviar variables de respuesta controladas a la capa de interfaz
+        // 4. Empaquetado final de variables controladas para la interfaz de usuario
         $data = [
             'titulo'      => 'Dashboard Analítico Comercial',
             'reporte'     => $reporteDTO,
@@ -102,12 +90,10 @@ class Dashboard extends BaseController
             'alertaInfo'  => $alertaInfo   
         ];
 
-        // Retornamos las vistas unificadas
-        $htmlCompleto = view('plantillas/head', $data)
-                      . view('plantillas/navbar')
-                      . view('Dashboard/index', $data)
-                      . view('plantillas/footer');
-
-        return $htmlCompleto;
+        // Retornamos las vistas del sistema concatenadas
+        return view('plantillas/head', $data)
+             . view('plantillas/navbar')
+             . view('Dashboard/index', $data)
+             . view('plantillas/footer');
     }
 }

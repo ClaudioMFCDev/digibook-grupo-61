@@ -25,6 +25,17 @@ class ServicioDashboard extends Model
         $metricasGlobales = $query->getRow();
         $reporteDTO->cantidadVentas = (int)($metricasGlobales->cantidadVentas ?? 0);
         $reporteDTO->totalIngresos  = (float)($metricasGlobales->totalIngresos ?? 0.00);
+
+        // Liberamos los hilos de mysqli INMEDIATAMENTE después 
+        // de leer el SP. Esto limpia el canal de comunicación antes de ejecutar los métodos auxiliares.
+        if (isset($db->connID) && $db->connID instanceof \mysqli) {
+            while ($db->connID->next_result()) {
+                $result = $db->connID->store_result();
+                if ($result) {
+                    $result->free();
+                }
+            }
+        }
         
         // --- RESULT SET 2: Demografía de Clientes (Masculino/Femenino) ---
         // Usamos el método auxiliar seguro para evitar bloqueos de hilos de mysqli
