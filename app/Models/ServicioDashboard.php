@@ -63,7 +63,6 @@ class ServicioDashboard extends Model
      * Auxiliar method to fetch dominant gender demographic data directly from user table
      */
     private function obtenerDemografiaAuxiliar($db, $desde, $hasta) {
-        // CORRECCIÓN: Leemos u.genero directamente sin hacer JOIN con otra tabla
         $sql = "SELECT u.genero AS demografia 
                 FROM compra c 
                 JOIN usuario u ON c.dni = u.dni 

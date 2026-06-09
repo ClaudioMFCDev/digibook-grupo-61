@@ -1,0 +1,21 @@
+CRITICAL - 2026-06-09 15:36:20 --> Error: Call to undefined method CodeIgniter\CLI\CLI::clear()
+in APPPATH\Commands\ProbarDashboard.php on line 26.
+ 1 SYSTEMPATH\CLI\Commands.php(65): App\Commands\ProbarDashboard->run([])
+ 2 SYSTEMPATH\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('dashboard:probar', [])
+ 3 ROOTPATH\spark(102): CodeIgniter\CLI\Console->run()
+CRITICAL - 2026-06-09 15:37:41 --> CodeIgniter\CLI\Exceptions\CLIException: Inválido foreground color: gray.
+in SYSTEMPATH\CLI\CLI.php on line 601.
+ 1 SYSTEMPATH\CLI\CLI.php(601): CodeIgniter\CLI\Exceptions\CLIException::forInvalidColor('foreground', 'gray')
+ 2 SYSTEMPATH\CLI\CLI.php(468): CodeIgniter\CLI\CLI::color('----------------------------------------------------------', 'gray', null)
+ 3 APPPATH\Commands\ProbarDashboard.php(36): CodeIgniter\CLI\CLI::write('----------------------------------------------------------', 'gray')
+ 4 SYSTEMPATH\CLI\Commands.php(65): App\Commands\ProbarDashboard->run([])
+ 5 SYSTEMPATH\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('dashboard:probar', [])
+ 6 ROOTPATH\spark(102): CodeIgniter\CLI\Console->run()
+CRITICAL - 2026-06-09 15:39:55 --> CodeIgniter\CLI\Exceptions\CLIException: Inválido foreground color: gray.
+in SYSTEMPATH\CLI\CLI.php on line 601.
+ 1 SYSTEMPATH\CLI\CLI.php(601): CodeIgniter\CLI\Exceptions\CLIException::forInvalidColor('foreground', 'gray')
+ 2 SYSTEMPATH\CLI\CLI.php(468): CodeIgniter\CLI\CLI::color('-> Pasando datos al contrato \'ValidarPeriodo\' (Strategy Pattern)...', 'gray', null)
+ 3 APPPATH\Commands\ProbarDashboard.php(55): CodeIgniter\CLI\CLI::write('-> Pasando datos al contrato \'ValidarPeriodo\' (Strategy Pattern)...', 'gray')
+ 4 SYSTEMPATH\CLI\Commands.php(65): App\Commands\ProbarDashboard->run([])
+ 5 SYSTEMPATH\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('dashboard:probar', [])
+ 6 ROOTPATH\spark(102): CodeIgniter\CLI\Console->run()
