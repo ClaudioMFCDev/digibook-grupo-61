@@ -14,6 +14,7 @@ class ValidarPeriodo implements ValidadorStrategy
         $fin = strtotime($datos['hasta']);
         $hoy = time();
 
+        // relacion de rango y fechas futuras
         return ($inicio <= $fin) && ($fin <= $hoy);
     }
 }
