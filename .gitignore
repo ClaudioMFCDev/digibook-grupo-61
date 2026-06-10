@@ -16,3 +16,12 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+
+
+# Ignorar absolutamente todos los logs del sistema
+writable/logs/*
+!writable/logs/index.html
+
+# Ignorar la barra de depuración y las sesiones locales
+writable/debugbar/*
+writable/session/*
