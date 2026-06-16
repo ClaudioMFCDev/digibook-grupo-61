@@ -62,7 +62,7 @@
 
             <?php if (isset($error_validacion) && $error_validacion !== null): ?>
                 <div class="alert alert-danger text-center fw-bold shadow-sm mb-4" role="alert">
-                    ⚠️ <?= esc($error_validacion) ?>
+                     <?= esc($error_validacion) ?>
                 </div>
             <?php endif; ?>
 
@@ -82,7 +82,7 @@
                                     
                                     <p class="card-text text-muted"><?php echo $libro['Género'] ?? $libro['nombre_genero'] ?? '' ?></p>
 
-                                    <?php 
+                                    <!-- <?php 
                                         // Obtenemos el nombre del archivo de la imagen desde la BD
                                         $nombreArchivo = $libro['img'] ?? ''; 
 
@@ -92,9 +92,13 @@
                                         } else {
                                             $rutaImagen = base_url('public/imagenes/default.png');
                                         }
-                                    ?>
+                                    ?> -->
 
-                                    <img src="<?= $rutaImagen ?>" class="card-img-top mb-3" alt="Portada" style="height: 300px; object-fit: cover; width: 100%;">
+                                    <!-- <img src="<?= $rutaImagen ?>" class="card-img-top mb-3" alt="Portada" style="height: 300px; object-fit: cover; width: 100%;"> -->
+
+                                    <img src="<?php echo (!empty($libro['img'])) ? $libro['img'] : 'https://via.placeholder.com/400x600?text=Sin+Portada'; ?>" 
+                                        alt="<?php echo $libro['titulo']; ?>" 
+                                        class="img-fluid">
 
                                     <p class="card-text mt-auto mb-3 fs-4 rounded bg-primary text-white p-2">
                                         <?php echo '$' . ($libro['Precio'] ?? $libro['precio']) ?>

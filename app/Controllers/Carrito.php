@@ -13,6 +13,7 @@ use PhpParser\Node\Stmt\TryCatch;
 class Carrito extends BaseController{
     private $cart;
     private $articulo;
+    
     /**
      * Constructor de la clase ProductController
      */
@@ -20,17 +21,16 @@ class Carrito extends BaseController{
     {
         //llamada al constructor de la superclase
         parent::__construct(); 
-        $this->cart=new Cart(); 
-        $this->articulo=New ArticuloModel(); 
+        $this->cart = new Cart(); 
+        $this->articulo = new ArticuloModel(); 
     }
 
     public function showCart(){
-        $cart_data=$this->getCart();
+        $cart_data = $this->getCart();
         return view('plantillas/head') .
-        view('plantillas/navbar') .
-        view('contenido/VistaCarrito',['cart' => $cart_data]) .
-        view('plantillas/footer');
-        
+               view('plantillas/navbar') .
+               view('contenido/VistaCarrito',['cart' => $cart_data]) .
+               view('plantillas/footer');
     }
 
     /**
@@ -48,19 +48,17 @@ class Carrito extends BaseController{
         $this->cart->destroy();
     }
 
-
     private function buscarArticulo($idProd){
         try {
-           
-            $articulo=$this->articulo->getArticuloPorId(intval($idProd));
+            $articulo = $this->articulo->getArticuloPorId(intval($idProd));
             return $articulo;
         } catch (\Throwable $th) {
             throw $th;
         }
-        
     }
+
     /**
-     * 
+     * Auxiliar para insertar en la librería del carrito
      */
     private function agregarCarrito($datosArticulo){
         try {
@@ -75,55 +73,82 @@ class Carrito extends BaseController{
      */
     public function controlAgregar($idProd){
         
+        $idProd = intval($idProd);
         $productoExiste = false;
-        //controla que el producto ya no esté en el carrito
+        
+        // Controla que el producto ya no esté en el carrito
         foreach ($this->getCart() as $item) {
-            if ($item['id'] === $idProd) {
+            if (intval($item['id']) === $idProd) {
                 $productoExiste = true;
                 break;
             }
         }
+        
         if ($productoExiste){
             return redirect()->back()->withInput()->with('cart_errors', 'El producto ya está en el carrito');
-        }
-        else{
-            $articulo=$this->buscarArticulo($idProd);
-            //dd($articulo['resultado'][0]['id']);
-            if (count($articulo)>=0){
-                $datosArticulo=['id'      => $idProd,
-                    'qty'     => 1,
-                    'price'   => $articulo['resultado'][0]['Precio'],
-                    'name'    => $articulo['resultado'][0]['Título'],
-                    'genre'=>$articulo['resultado'][0]['Género'],
-                    'editorial'=>$articulo['resultado'][0]['Editorial'],
-                    'author'=>$articulo['resultado'][0]['Autores'],
-                    
+        } 
+        
+        // Ejecutamos la búsqueda mediante el procedimiento almacenado
+        $articulo = $this->buscarArticulo($idProd); 
+        $datosArticulo = null;
+
+        // CASO A: El procedimiento almacenado trajo al libro con éxito (tiene autor)
+        if (!empty($articulo['resultado']) && isset($articulo['resultado'][0])) {
+            $datosArticulo = [
+                'id'        => $idProd, 
+                'qty'       => 1, 
+                'price'     => $articulo['resultado'][0]['Precio'], 
+                'name'      => $articulo['resultado'][0]['Título'], 
+                'genre'     => $articulo['resultado'][0]['Género'], 
+                'editorial' => $articulo['resultado'][0]['Editorial'], 
+                'author'    => (!empty($articulo['resultado'][0]['Autores'])) ? $articulo['resultado'][0]['Autores'] : 'Autor Desconocido',
+            ]; 
+        } 
+        // CASO B: El procedimiento volvió vacío por culpa del INNER JOIN (libro sin autor)
+        else {
+            // Controller fallback query to fetch database records directly
+            $db = \Config\Database::connect();
+            $builder = $db->table('articulo');
+            $libroBase = $builder->getWhere(['idLibro' => $idProd])->getRowArray();
+
+            // Si el registro existe en la tabla base, armamos los datos esenciales para la compra
+            if ($libroBase) {
+                $datosArticulo = [
+                    'id'        => $idProd, 
+                    'qty'       => 1, 
+                    'price'     => $libroBase['precio'], 
+                    'name'      => $libroBase['titulo'], 
+                    'genre'     => 'General', 
+                    'editorial' => 'Particular',
+                    'author'    => 'Autor Desconocido',
                 ];
-                 $this->agregarCarrito($datosArticulo);
-                 
-                return redirect()->to(base_url('cart'));
             }
-           
         }
-            
+
+        // REDIRECCIÓN Y AGREGADO: Centralizado al final para evitar pantallas blancas
+        if ($datosArticulo !== null) {
+            $this->agregarCarrito($datosArticulo);
+            return redirect()->to(base_url('buy/showCart'));
+        } else {
+            return redirect()->back()->with('error', 'El artículo seleccionado no se encuentra disponible.');
+        }
     }
 
     /**
      * Permite eliminar un elemento del carrito según su id
      */
     public function eliminarArticulo($idProd){
-        
         $encontrado = false;
-         foreach ($this->getCart() as $rowid => $item) {
+        foreach ($this->getCart() as $rowid => $item) {
             if ($item['id'] == $idProd) {
                 $this->cart->remove($rowid);
-                $encontrado=true;
+                $encontrado = true;
                 break;
             }
         }
-         if ($this->request->isAJAX()) {
+        if ($this->request->isAJAX()) {
             if ($encontrado) {
-                  return $this->response->setJSON([
+                 return $this->response->setJSON([
                     'success' => true,
                     'message' => 'Producto eliminado del carrito.'
                 ]);
@@ -134,20 +159,14 @@ class Carrito extends BaseController{
                 ]);
             }
         }
-        
     }
 
-/**
+    /**
      * Método que permite la eliminación total del carrito
      */
     public function vaciarCarrito()
     {
-        // 1. Destruimos el carrito
         $this->cart->destroy();
-        
-        // 2. En lugar de JSON, redirigimos al usuario a la vista del carrito
-        // Así verá la tabla vacía y la página bonita de siempre.
-        return redirect()->to(base_url('cart'));
+        return redirect()->to(base_url('buy/showCart'));
     }
-
 }
