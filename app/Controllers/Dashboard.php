@@ -15,6 +15,15 @@ class Dashboard extends BaseController
         $this->servicioDashboard = new ServicioDashboard();
     }
 
+    public function validarPeriodo($fechaDesde, $fechaHasta){
+
+        $datosAValidar = ['desde' => $fechaDesde, 'hasta' => $fechaHasta];
+        // Instanciamos la estrategia concreta del patrón
+        $validador = new ValidarPeriodo();
+
+        return $validador->validar($datosAValidar);
+    }
+
     public function index() 
     {
         // 1. Captura de parámetros enviados desde el formulario por POST
@@ -39,14 +48,9 @@ class Dashboard extends BaseController
 
         // IMPLEMENTACIÓN DEL PATRÓN STRATEGY
         if ($alertaError === null) {
-            
-            $datosAValidar = ['desde' => $fechaDesde, 'hasta' => $fechaHasta];
-            
-            // Instanciamos la estrategia concreta del patrón
-            $validador = new ValidarPeriodo();
 
             // DELEGACIÓN: El controlador no calcula marcas de tiempo, solo le pregunta a la estrategia
-            if (!$validador->validar($datosAValidar)) {
+            if (!$this->validarPeriodo($fechaDesde, $fechaHasta)) {
                 
                 // Mensaje unificado para los casos fallidos de fechas invertidas o futuras
                 $alertaError = 'Error: El rango de fechas seleccionado es incoherente o superior a la fecha actual. Operación frenada.';
