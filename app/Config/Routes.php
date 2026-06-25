@@ -16,8 +16,8 @@ $routes->get('buy/showCart','Carrito::showCart');
 $routes->get('buy/registrar', 'Compra::controlarCompra');
 
 
-$routes->get('dashboard', 'Dashboard::index');
-$routes->post('dashboard', 'Dashboard::index');
+$routes->get('dashboard', 'ServicioReporte::index');
+$routes->post('dashboard', 'ServicioReporte::index');
 
 $routes->get('login', 'Auth::index');
 $routes->post('login/autenticar', 'Auth::autenticar');

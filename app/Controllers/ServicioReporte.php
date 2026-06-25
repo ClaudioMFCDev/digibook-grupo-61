@@ -2,17 +2,17 @@
 
 namespace App\Controllers;
 
-use App\Models\ServicioDashboard;
+use App\Models\DashboardModel;
 use App\Libraries\ValidarPeriodo; 
 
-class Dashboard extends BaseController 
+class ServicioReporte extends BaseController 
 {
     protected $servicioDashboard;
 
     public function __construct() 
     {
         // Constructor para inicializar el modelo orquestador del tablero
-        $this->servicioDashboard = new ServicioDashboard();
+        $this->servicioDashboard = new DashboardModel();
     }
 
     public function validarPeriodo($fechaDesde, $fechaHasta){

@@ -5,7 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use App\Models\ReporteDTO;
 
-class ServicioDashboard extends Model
+class DashboardModel extends Model
 {
     /**
      * Method to fetch consolidated business metrics via stored procedure

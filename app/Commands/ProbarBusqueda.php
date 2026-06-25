@@ -10,7 +10,7 @@ class ProbarBusqueda extends BaseCommand
 {
     protected $group       = 'Demo Examen';
     protected $name        = 'busqueda:probar';
-    protected $description = 'Prueba Unitaria Pura bajo aislamiento total del metodo obtenerArticulosFiltrados.';
+    protected $description = 'Prueba Unitaria Pura Automatizada mediante aserciones (asserts).';
 
     public function run(array $params)
     {
@@ -44,7 +44,6 @@ class ProbarBusqueda extends BaseCommand
         ];
 
         // CONSTRUCCIÓN DEL MOCK DE BASE DE DATOS EN MEMORIA
-        // Repuesta de la db falsa.
         $mockQuery = new class($bancoDeLibros) {
             private $librosFiltrados;
             public function __construct($libros) { $this->librosFiltrados = $libros; }
@@ -52,7 +51,6 @@ class ProbarBusqueda extends BaseCommand
             public function getResultArray() { return $this->librosFiltrados; }
         };
 
-        // Motor de db falso
         $mockDb = new class($mockQuery, $bancoDeLibros) {
             private $mq;
             private $banco;
@@ -74,73 +72,79 @@ class ProbarBusqueda extends BaseCommand
             }
         };
 
-        // Instanciamos el doble de rodaje que está declarado abajo del archivo
         $servicio = new ArticuloModelMock();
         $servicio->inyectarBaseDeDatosFalsa($mockDb);
 
         CLI::clearScreen();
-        CLI::write("==========================================================", 'cyan');
-        CLI::write("   PRUEBA UNITARIA MOCKED: OBTENERARTICULOSFILTRADOS", 'cyan');
-        CLI::write("==========================================================", 'cyan');
-        CLI::write("Auditoría aislada del método del modelo ante estímulos.");
-        CLI::write("Ingrese 'x' para finalizar el script.\n");
+        CLI::write("EJECUTANDO BANCO DE PRUEBAS AUTOMATICAS", 'cyan');
+        CLI::write("----------------------------------------------------------\n", 'white');
 
-        while (true) {
+        try {
+            // CASO 01: Evaluación Normal (Apertura Total)
+            CLI::write("Caso 01 - Evaluación normal:");
+            CLI::write("-> Datos de Entrada: Todos los parametros en NULL.");
+            $res1 = $servicio->obtenerArticulosFiltrados(null, null, null, null, null);
+            CLI::write("-> Valor Obtenido: Array con " . count($res1) . " articulos.");
+            $this->assertEquals(25, count($res1), "Caso 01");
             CLI::write("----------------------------------------------------------", 'white');
-            
-            $inputTitulo = CLI::prompt("1. Titulo a buscar (Escriba 'null' para NULL)");
-            if (strtolower($inputTitulo) === 'x') break;
 
-            $inputGenero = CLI::prompt("2. idGenero (Escriba 'null' para NULL)");
-            if (strtolower($inputGenero) === 'x') break;
+            // CASO 02: Se ingresa solo el título
+            CLI::write("Caso 02 - Se ingresa solo el titulo:");
+            CLI::write("-> Datos de Entrada: titulo = 'Mastering', los demas en NULL.");
+            $res2 = $servicio->obtenerArticulosFiltrados("Mastering", null, null, null, null);
+            CLI::write("-> Valor Obtenido: Array con " . count($res2) . " articulos.");
+            $this->assertEquals(1, count($res2), "Caso 02");
+            CLI::write("----------------------------------------------------------", 'white');
 
-            $inputAutor = CLI::prompt("3. idAutor (Escriba 'null' para NULL)");
-            if (strtolower($inputAutor) === 'x') break;
+            // CASO 03: Se ingresa solo el idGenero
+            CLI::write("Caso 03 - Se ingresa solo el idGenero:");
+            CLI::write("-> Datos de Entrada: idGenero = 2, los demas en NULL.");
+            $res3 = $servicio->obtenerArticulosFiltrados(null, 2, null, null, null);
+            CLI::write("-> Valor Obtenido: Array con " . count($res3) . " articulos correspondientes.");
+            $this->assertEquals(5, count($res3), "Caso 03");
+            CLI::write("----------------------------------------------------------", 'white');
 
-            $inputMin = CLI::prompt("4. precioMin (Escriba 'null' para NULL)");
-            if (strtolower($inputMin) === 'x') break;
+            // CASO 04: Rango de precios normal
+            CLI::write("Caso 04 - Rango de precios normal:");
+            CLI::write("-> Datos de Entrada: precioMin = 9000.00, precioMax = 9999.00.");
+            $res4 = $servicio->obtenerArticulosFiltrados(null, null, null, 9000.00, 9999.00);
+            CLI::write("-> Valor Obtenido: Array con " . count($res4) . " articulos filtrados.");
+            $this->assertEquals(4, count($res4), "Caso 04");
+            CLI::write("----------------------------------------------------------", 'white');
 
-            $inputMax = CLI::prompt("5. precioMax (Escriba 'null' para NULL)");
-            if (strtolower($inputMax) === 'x') break;
+            // CASO 05: Texto aleatorio en título
+            CLI::write("Caso 05 - Texto aleatorio en titulo:");
+            CLI::write("-> Datos de Entrada: titulo = 'LibroInexistenteXYZ', los demas en NULL.");
+            $res5 = $servicio->obtenerArticulosFiltrados("LibroInexistenteXYZ", null, null, null, null);
+            CLI::write("-> Valor Obtenido: Array con " . count($res5) . " elementos.");
+            $this->assertEquals(0, count($res5), "Caso 05");
+            CLI::write("----------------------------------------------------------", 'white');
 
-            $titulo = (strtolower($inputTitulo) === 'null') ? null : $inputTitulo;
-            $idGenero = (strtolower($inputGenero) === 'null') ? null : (is_numeric($inputGenero) ? (int)$inputGenero : $inputGenero);
-            $idAutor = (strtolower($inputAutor) === 'null') ? null : (is_numeric($inputAutor) ? (int)$inputAutor : $inputAutor);
-            $precioMin = (strtolower($inputMin) === 'null') ? null : (is_numeric($inputMin) ? (float)$inputMin : $inputMin);
-            $precioMax = (strtolower($inputMax) === 'null') ? null : (is_numeric($inputMax) ? (float)$inputMax : $inputMax);
+            // CASO 06: Dato de tipo string en campo numérico
+            CLI::write("Caso 06 - Dato de tipo string en campo numerico:");
+            CLI::write("-> Datos de Entrada: idGenero = 'computacion', los demas en NULL.");
+            // Al no ser numerico, el mock evalua la comparacion estricta y devuelve 0 de manera segura
+            $res6 = $servicio->obtenerArticulosFiltrados(null, "computacion", null, null, null);
+            CLI::write("-> Valor Obtenido: Array con " . count($res6) . " elementos.");
+            $this->assertEquals(0, count($res6), "Caso 06");
+            CLI::write("----------------------------------------------------------", 'white');
 
-            CLI::write("\n[ESTIMULO] Evaluando respuesta del metodo aislado...", 'yellow');
-            CLI::write("Tipos: Titulo (" . gettype($titulo) . ") | Genero (" . gettype($idGenero) . ") | Autor (" . gettype($idAutor) . ") | Min (" . gettype($precioMin) . ") | Max (" . gettype($precioMax) . ")", 'white');
+            CLI::write("\n[RESULTADO] Todas las pruebas de la matriz se ejecutaron con éxito.", 'green');
 
-            try {
-                $resultados = $servicio->obtenerArticulosFiltrados($titulo, $idGenero, $idAutor, $precioMin, $precioMax);
-
-                if (empty($resultados)) {
-                    CLI::write("\n📊 [RESULTADO ESPERADO]: Exito Tecnico con Array Vacio", 'yellow');
-                    CLI::write("Aclaración: El metodo respondio perfectamente retornando un array asociativo limpio sin romper la estructura.", 'white');
-                    CLI::write("-> Respuesta: array(0) { }");
-                } else {
-                    CLI::write("\n🟢 [RESULTADO ESPERADO]: Exito con Datos Encontrados (" . count($resultados) . " items)", 'green');
-                    CLI::write("Aclaración: El metodo aislado filtro correctamente sobre la coleccion inyectada.", 'white');
-                    CLI::write("-> Primer elemento devuelto: " . json_encode($resultados[0]), 'white');
-                }
-
-            } catch (\TypeError $e) {
-                CLI::write("\n❌ [RESULTADO ESPERADO]: Fallo de Tipado (TypeError)", 'red');
-                CLI::write("Aclaración: PHP intercepto y aborto la ejecucion debido a una incongruencia de tipos primitivos.", 'white');
-                CLI::write("Mensaje: " . $e->getMessage(), 'red');
-            } catch (\Exception $e) {
-                CLI::write("\n❌ [RESULTADO ESPERADO]: Fallo General", 'red');
-                CLI::write("Mensaje: " . $e->getMessage(), 'red');
-            }
-            CLI::write("\n");
+        } catch (\Exception $e) {
+            CLI::write("\n[FALLO DE ASERCIÓN] " . $e->getMessage(), 'red');
         }
+    }
 
-        CLI::write("\nLaboratorio de pruebas unitarias puras cerrado.", 'cyan');
+    private function assertEquals($esperado, $obtenido, $escenario)
+    {
+        if ($esperado !== $obtenido) {
+            throw new \Exception("{$escenario}: Se esperaba {$esperado}, pero se obtuvo {$obtenido}.");
+        }
+        CLI::write("[ÉXITO] {$escenario}\n", 'green');
     }
 }
 
-// 2. EL MOCK SE DECLARA AL FINAL PARA NO INTERFERIR CON EL AUTOLOADER DE SPARK
 class ArticuloModelMock extends ArticuloModel 
 {
     public function inyectarBaseDeDatosFalsa($mockDb) {
